@@ -23,9 +23,9 @@ const start = async () => {
   }
 };
 
-// app.get("/", (req, res) => {
-//   res.json("test ok");
-// });
+app.get("/", (req, res) => {
+  res.json("test ok");
+});
 
 //app.use("/", router);
 
