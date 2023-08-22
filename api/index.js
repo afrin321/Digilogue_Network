@@ -11,7 +11,6 @@ app.use(cookieParser());
 
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
-//mongodb+srv://afrinhaque19:<password>@cluster0.rmvyrli.mongodb.net/
 const uri = process.env.MONGODB_URI;
 const start = async () => {
   try {
@@ -26,8 +25,6 @@ const start = async () => {
 app.get("/", (req, res) => {
   res.json("test ok");
 });
-
-//app.use("/", router);
 
 const allRoutes = require("./routes/allRoutes.js");
 app.use("/", allRoutes);
