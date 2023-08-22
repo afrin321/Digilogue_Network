@@ -14,4 +14,4 @@ distgit pu
 *.sw?
 
 .env
-creds.txt
+creds
