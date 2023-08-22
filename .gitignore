@@ -13,5 +13,5 @@ distgit pu
 *.sln
 *.sw?
 
-./api/.env
-./creds.txt
+api/.env
+creds.txt
