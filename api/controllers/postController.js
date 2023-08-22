@@ -6,11 +6,11 @@ const fs = require("fs");
 const secret = "fskfbsbkdrbgkrbgkdtgthlkthlthltrl";
 
 const newPost = async (req, res) => {
-  const { originalname, path } = req.file;
-  const parts = originalname.split(".");
-  const ext = parts[parts.length - 1];
-  const newPath = path + "." + ext;
-  fs.renameSync(path, newPath);
+  // const { originalname, path } = req.file;
+  // const parts = originalname.split(".");
+  // const ext = parts[parts.length - 1];
+  // const newPath = path + "." + ext;
+  // fs.renameSync(path, newPath);
 
   const { token } = req.cookies;
   console.log("token", token);
@@ -22,7 +22,7 @@ const newPost = async (req, res) => {
         title,
         summary,
         content,
-        image: newPath,
+        //      image: newPath,
         author: info.id,
       });
 
@@ -33,14 +33,14 @@ const newPost = async (req, res) => {
 };
 
 const updatePost = async (req, res) => {
-  let newPath = null;
-  if (req.file) {
-    const { originalname, path } = req.file;
-    const parts = originalname.split(".");
-    const ext = parts[parts.length - 1];
-    newPath = path + "." + ext;
-    fs.renameSync(path, newPath);
-  }
+  // let newPath = null;
+  // if (req.file) {
+  //   const { originalname, path } = req.file;
+  //   const parts = originalname.split(".");
+  //   const ext = parts[parts.length - 1];
+  //   newPath = path + "." + ext;
+  //   fs.renameSync(path, newPath);
+  // }
 
   const { token } = req.cookies;
   console.log("token", token);
@@ -58,7 +58,7 @@ const updatePost = async (req, res) => {
         title,
         summary,
         content,
-        image: newPath ? newPath : Post.image,
+        //      image: newPath ? newPath : Post.image,
       });
 
       res.json("ok");
