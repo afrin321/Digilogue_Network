@@ -15,3 +15,5 @@ distgit pu
 
 .env
 creds
+
+uploads/*
