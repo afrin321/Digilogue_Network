@@ -20,12 +20,18 @@ const formats = [
     'link', 'image'
 ]
 
+
+
+
+
 export default function CreatePost() {
     const [title, setTitle] = useState("")
     const [summary, setSummary] = useState("")
     const [files, setFiles] = useState("")
     const [content, setContent] = useState("")
     const [redirect, setRedirect] = useState(false)
+
+
 
     async function createNewPost(ev) {
         ev.preventDefault()
@@ -39,6 +45,8 @@ export default function CreatePost() {
             body: data,
             credentials: 'include'
         })
+
+        console.log(data)
 
         if (response.ok) {
             setRedirect(true)
